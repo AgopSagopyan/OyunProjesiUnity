@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public Transform cam;
 
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -31,12 +32,20 @@ public class Movement : MonoBehaviour
 
         controller.Move(move * Time.deltaTime * playerSpeed);
 
+        float targetAngle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+
+        transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+
         if(Input.GetButtonDown("Jump") && isGrounded) {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
 
+        Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
         playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+        //controller.Move(playerVelocity * Time.deltaTime);
+        controller.Move(moveDir.normalized * Time.deltaTime);
+
 
     }
 }
