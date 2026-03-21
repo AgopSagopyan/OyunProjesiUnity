@@ -3,6 +3,10 @@ using UnityEngine;
 public class ThirdPersonMovement : MonoBehaviour
 {
     public float speed = 5f;
+    public float sprintSpeed = 10f;
+    private float currentSpeed;
+
+    private bool isSprinting = false;
 
     public float jumpForce = 5f;
 
@@ -17,11 +21,18 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private CharacterController controller;
 
+
     void Awake() {
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         controller = GetComponent<CharacterController>();
 
         controls = new PlayerControls();
+
+        controls.Player.Sprint.performed += ctx => isSprinting = true;
+        controls.Player.Sprint.canceled += ctx => isSprinting = false;
 
         controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
@@ -46,6 +57,11 @@ public class ThirdPersonMovement : MonoBehaviour
         verticalVelocity = Mathf.Sqrt(jumpForce * -2f * gravity);
     }
 
+    void CheckSprinting()
+    {
+
+    }
+
 
     void Update() {
         Move();
@@ -53,6 +69,10 @@ public class ThirdPersonMovement : MonoBehaviour
     }
 
     void Move() {
+
+        float currentSpeed = isSprinting ? sprintSpeed : speed;
+
+
         Vector3 direction = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
 
         if (direction.magnitude >= 0.1f)
@@ -65,7 +85,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
             transform.position += moveDir * speed * Time.deltaTime;
 
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            controller.Move(moveDir.normalized * currentSpeed * Time.deltaTime);
         }
     }
 
