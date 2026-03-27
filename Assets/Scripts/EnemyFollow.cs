@@ -56,4 +56,26 @@ public class EnemyFollow : MonoBehaviour
 
         Destroy(weapon, hitboxLifetime);
     }
+
+    // Düşmanın oyuncuya vereceği hasar
+    public float damageAmount = 20f;
+
+    // Düşman objesi, oyuncuya çarptığında hasar verecek
+    // Düşman objesi, oyuncuya çarptığında hasar verecek
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Düşman Oyuncuya Çarptı!");  // Debugging
+
+            // Oyuncunun PlayerHealth bileşenini al
+            PlayerHealth ph = other.GetComponent<PlayerHealth>();
+
+            // Eğer PlayerHealth bileşeni varsa, hasar ver
+            if (ph != null)
+            {
+                ph.TakeDamage(damageAmount);  // Hasar miktarını parametre olarak veriyoruz
+            }
+        }
+    }
 }
