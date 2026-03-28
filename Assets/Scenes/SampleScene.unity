@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 13822975}
   - component: {fileID: 13822974}
   - component: {fileID: 13822973}
-  - component: {fileID: 13822972}
   - component: {fileID: 13822971}
   - component: {fileID: 13822970}
   m_Layer: 0
@@ -195,18 +194,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 32
   m_CollisionDetection: 0
---- !u!114 &13822972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13822968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42582715e80b9fc4a9010838d65ffd18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Coins
 --- !u!135 &13822973
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1476,7 +1463,6 @@ GameObject:
   - component: {fileID: 450121842}
   - component: {fileID: 450121841}
   - component: {fileID: 450121840}
-  - component: {fileID: 450121839}
   - component: {fileID: 450121838}
   - component: {fileID: 450121837}
   m_Layer: 0
@@ -1540,18 +1526,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 32
   m_CollisionDetection: 0
---- !u!114 &450121839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450121835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42582715e80b9fc4a9010838d65ffd18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Coins
 --- !u!135 &450121840
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2592,7 +2566,6 @@ GameObject:
   - component: {fileID: 741244606}
   - component: {fileID: 741244605}
   - component: {fileID: 741244604}
-  - component: {fileID: 741244603}
   - component: {fileID: 741244602}
   - component: {fileID: 741244601}
   m_Layer: 0
@@ -2656,18 +2629,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 32
   m_CollisionDetection: 0
---- !u!114 &741244603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741244599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42582715e80b9fc4a9010838d65ffd18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Coins
 --- !u!135 &741244604
 SphereCollider:
   m_ObjectHideFlags: 0
