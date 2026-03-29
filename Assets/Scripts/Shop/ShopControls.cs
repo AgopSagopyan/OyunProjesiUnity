@@ -10,5 +10,6 @@ public class ShopControls : MonoBehaviour
         shopUi.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
 
+
     }
 }
