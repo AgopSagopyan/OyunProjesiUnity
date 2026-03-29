@@ -1,7 +1,15 @@
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
+    [Header("Ground Check Settings")]
+    public Transform groundCheck;
+    public float sphereRadius = 0.4f;
+    public LayerMask groundLayer;
+
+    private bool isGrounded;
+
     public float speed = 5f;
     public float sprintSpeed = 10f;
     private float currentSpeed;
@@ -52,9 +60,23 @@ public class ThirdPersonMovement : MonoBehaviour
         controls.Disable();
     }
 
+    void OnDrawGizmosSelected()
+    {
+        if(groundCheck != null)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(groundCheck.position, sphereRadius);
+        }
+        
+    }
     void Jump() {
 
-        verticalVelocity = Mathf.Sqrt(jumpForce * -2f * gravity);
+        isGrounded = Physics.CheckSphere(groundCheck.position, sphereRadius, groundLayer);
+
+        if(isGrounded)
+        {
+            verticalVelocity = Mathf.Sqrt(jumpForce * -2f * gravity);
+        }
     }
 
     void CheckSprinting()

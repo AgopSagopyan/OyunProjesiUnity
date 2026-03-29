@@ -4,6 +4,8 @@ public class EnemyFollow : MonoBehaviour
 {
     public Transform player;
 
+    public Health victim;
+
     [Header("Hareket")]
     public float speed = 5f;
     public float stoppingDistance = 2f;
@@ -52,7 +54,8 @@ public class EnemyFollow : MonoBehaviour
     {
         Vector3 spawnPos = transform.position + transform.forward * distanceInFront;
 
-        GameObject weapon = Instantiate(hitboxPrefab, spawnPos, transform.rotation);
+        //GameObject weapon = Instantiate(hitboxPrefab, spawnPos, transform.rotation);
+        GameObject weapon = Instantiate(hitboxPrefab, spawnPos, Quaternion.Euler(90, 0, 0));
 
         Destroy(weapon, hitboxLifetime);
     }
@@ -66,6 +69,8 @@ public class EnemyFollow : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+           victim.TakeDamage(10); 
+
             Debug.Log("Düşman Oyuncuya Çarptı!");  // Debugging
 
             // Oyuncunun PlayerHealth bileşenini al
