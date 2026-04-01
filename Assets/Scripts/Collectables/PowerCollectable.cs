@@ -1,66 +1,34 @@
 using System.Collections;
-using System.Data;
-using TMPro;
 using UnityEngine;
 
-public class Collectable : MonoBehaviour
+public class PowerCollectable : MonoBehaviour
 {
-    [Header("PlayerStats Scriptable Object")]
+    [Header("PlayerStats ScriptableObject")]
     public PlayerStats playerStats;
 
-    [Header("Health Text")]
-    public TextMeshProUGUI healthText;
-
-    public enum StatType { Health, Power, Armor, Speed, Score}
-
     [Header("Collectable Settings")]
-    public StatType collectableType;
-    public int amount = 10;
-
     public float shrinkSpeed = 2.0f;
+    public float amount = 10f;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
-            switch (collectableType)
-            {
-                case StatType.Health:
-                    break;
-                case StatType.Power:
-                    break;
-                
-            
-
-
-            } 
-
-            
-
+            playerStats.AddPower(amount);
+            StartCoroutine(ShrinkAndDestroy());
         }
-    }
-    
-
-    void StartShrinking()
-    {
-        StartCoroutine(ShrinkAndDestroy());
     }
 
     private IEnumerator ShrinkAndDestroy()
     {
-
         Vector3 initialScale = transform.localScale;
         float timer = 0f;
-
         while (timer< 1f)
         {
             timer += Time.deltaTime * shrinkSpeed;
-
             transform.localScale = Vector3.Lerp(initialScale, Vector3.zero, timer);
             yield return null;
         }
-
         Destroy(gameObject);
-
     }
 }

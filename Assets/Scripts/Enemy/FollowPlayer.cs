@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
@@ -9,6 +8,7 @@ public class FollowPlayer : MonoBehaviour
     [Header("Settings for chaser")]
     public float speed = 5f;
     public float rotationSpeed = 10f;
+    public float stoppingDistance = 2f;
 
     private CharacterController _controller;
 
@@ -19,15 +19,14 @@ public class FollowPlayer : MonoBehaviour
 
     void Update()
     {
+        if (target == null) return;
+
         LookToTarget();
         MoveToTarget();
     }
 
     void LookToTarget()
     {
-
-       if(target == null) return; 
-
        Vector3 lookPosition = target.position - transform.position;
        lookPosition.y = 0;
 
@@ -36,13 +35,12 @@ public class FollowPlayer : MonoBehaviour
 
     void MoveToTarget()
     {
-        if(target == null)
-        {
-            Debug.Log("Target not found!");
-            return;
-        }
+        float currentDistance = Vector3.Distance(transform.position, target.position);
 
-        Vector3 velocity = transform.forward * speed;
-        _controller.SimpleMove(velocity);
+        if(currentDistance > stoppingDistance)
+        {
+            Vector3 velocity = transform.forward * speed;
+            _controller.SimpleMove(velocity);
+        }
     }
 }
