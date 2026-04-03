@@ -29,6 +29,11 @@ public class PlayerStats : ScriptableObject
         return armor;
     }
 
+    void Awake()
+    {
+        currentHealth = maxHealth;
+    }
+
     public void AddHealth(float amount)
     {
         currentHealth += amount;
