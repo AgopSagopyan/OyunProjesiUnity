@@ -23,6 +23,10 @@ public class FollowPlayer : MonoBehaviour
 
         LookToTarget();
         MoveToTarget();
+
+        
+        //Vector3 velocity = transform.forward * speed;
+        //_controller.SimpleMove(velocity);
     }
 
     void LookToTarget()
