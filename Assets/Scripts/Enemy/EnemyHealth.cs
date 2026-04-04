@@ -1,8 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class MapSwitcher : MonoBehaviour
+public class EnemyHealt : MonoBehaviour
 {
+    [Header("EnemyStats Scriptable Object")]
+    public EnemyStats enemyStats;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,13 +17,10 @@ public class MapSwitcher : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+
+    public void AddHealth(float amount)
     {
-
-        if(other.CompareTag("Player"))
-        {
-            LoadingManager.Load("MainMenu");
-
-        }
+        enemyStats.AddHealth(amount);   
+        
     }
 }

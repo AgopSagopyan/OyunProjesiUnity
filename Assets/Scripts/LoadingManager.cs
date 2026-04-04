@@ -6,7 +6,8 @@ using TMPro;
 
 public class LoadingManager : MonoBehaviour
 {
-    public string sceneToLoad = "GameScene";
+
+    public static string SceneToLoad = "GameScene";
 
     public Slider loadingBar;
     public TextMeshProUGUI progressText;
@@ -22,7 +23,7 @@ public class LoadingManager : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneToLoad);
         operation.allowSceneActivation = false;
 
         float displayedProgress = 0f;
@@ -60,5 +61,11 @@ public class LoadingManager : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public static void Load(string sceneName)
+    {
+        SceneToLoad = sceneName;
+        SceneManager.LoadScene("LoadingScene");
     }
 }

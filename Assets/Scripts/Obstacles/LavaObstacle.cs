@@ -1,8 +1,12 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
-public class MapSwitcher : MonoBehaviour
+public class LavaObstacle : MonoBehaviour
 {
+    public PlayerStats playerStats;
+
+    public float damageValue = 10f;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,13 +19,12 @@ public class MapSwitcher : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-
         if(other.CompareTag("Player"))
         {
-            LoadingManager.Load("MainMenu");
-
+            Debug.Log("Nigger");
+            playerStats.AddHealth(-damageValue);
         }
     }
 }

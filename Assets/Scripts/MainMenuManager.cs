@@ -23,6 +23,6 @@ public class MainMenuManager : MonoBehaviour
     // LEVEL 1
     public void LoadLevel1()
     {
-        SceneManager.LoadScene("LoadingScene");
+        LoadingManager.Load("TestStage");
     }
 }
