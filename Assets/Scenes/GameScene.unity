@@ -7038,6 +7038,7 @@ MonoBehaviour:
   target: {fileID: 145531257}
   speed: 5
   rotationSpeed: 10
+  stoppingDistance: 2
 --- !u!143 &1779023503
 CharacterController:
   m_ObjectHideFlags: 0
