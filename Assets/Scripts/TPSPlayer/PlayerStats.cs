@@ -10,6 +10,8 @@ public class PlayerStats : ScriptableObject
     [Header("Player Stats")]
     public float maxHealth = 100f;
     public float currentHealth = 100f;
+    public float gold = 200f;
+    
 
     public float power = 5f;
     public float armor = 20f;
@@ -28,7 +30,10 @@ public class PlayerStats : ScriptableObject
     {
         return armor;
     }
-
+    public float GetPlayerGold()
+    {
+        return gold;
+    }
     void Awake()
     {
         currentHealth = maxHealth;
@@ -52,6 +57,13 @@ public class PlayerStats : ScriptableObject
     {
         armor += amount;
         Debug.Log("+" + amount + "Armor");
+        OnStatsChanged?.Invoke();
+    }
+
+    public void AddGold(float amount)
+    {
+        gold += amount;
+        Debug.Log("+" + amount + "Gold");
         OnStatsChanged?.Invoke();
     }
 
