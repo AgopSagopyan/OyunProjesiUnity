@@ -1,10 +1,14 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using Unity.VectorGraphics;
 
 public class ShopManager : MonoBehaviour
 {
     [Header("Player Data")]
     public PlayerStats playerStats;
+
+    public string sceneToLoadAfterShopping;
 
     [Header("UI")]
     public TextMeshProUGUI goldText;
@@ -17,7 +21,7 @@ public class ShopManager : MonoBehaviour
     void Start()
     {
         UpdateUI();
-        ShowWeapons(); // oyun açılınca weapon açık
+        //ShowWeapons(); // oyun açılınca weapon açık
     }
 
     //  SATIN ALMA (WEAPON)
@@ -26,9 +30,9 @@ public class ShopManager : MonoBehaviour
         float price = 100f;
         float powerIncrease = 10f;
 
-        if (playerStats.gold >= price)
+        if (playerStats.GetPlayerGold() >= price)
         {
-            playerStats.gold -= price;
+            playerStats.AddGold(-price);
             playerStats.AddPower(powerIncrease);
 
             Debug.Log("Silah satın alındı!");
@@ -43,12 +47,45 @@ public class ShopManager : MonoBehaviour
     //  (ŞİMDİLİK BOŞ )
     public void BuyArmor()
     {
-        Debug.Log("Armor sistemi sonra yapılacak");
+        float price = 100f;
+        float powerIncrease = 10f;
+
+        if (playerStats.GetPlayerGold() >= price)
+        {
+            playerStats.AddGold(-price);
+            playerStats.AddArmor(powerIncrease);
+
+            Debug.Log("Armor satın alındı!");
+            UpdateUI();
+        }
+        else
+        {
+            Debug.Log("Yeterli gold yok!");
+        }
+
     }
 
     //  (ŞİMDİLİK BOŞ)
     public void BuyHealth()
     {
+
+        float price = 100f;
+        float powerIncrease = 10f;
+
+        if (playerStats.GetPlayerGold() >= price)
+        {
+            playerStats.AddGold(-price);
+            playerStats.AddHealth(powerIncrease);
+
+            Debug.Log("Health satın alındı!");
+            UpdateUI();
+        }
+        else
+        {
+            Debug.Log("Yeterli gold yok!");
+        }
+
+
         Debug.Log("Health sistemi sonra yapılacak");
     }
 
@@ -94,5 +131,10 @@ public class ShopManager : MonoBehaviour
         weaponContent.SetActive(false);
         armorContent.SetActive(false);
         healthContent.SetActive(true);
+    }
+
+    public void FinishShopping()
+    {
+        LoadingManager.Load(sceneToLoadAfterShopping);
     }
 }

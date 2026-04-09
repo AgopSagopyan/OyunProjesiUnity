@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
+    public PlayerStats playerStats;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     bool collected = false;
 
@@ -23,6 +25,8 @@ public class Coins : MonoBehaviour
             collected = true;
             Score.score++;
             Destroy(gameObject);
+            playerStats.AddGold(100);
+
 
             //stats.AddCoins(1f);
         }

@@ -44,6 +44,11 @@ public class PlayerStats : ScriptableObject
         return currentArmor;
     }
 
+    public float GetPlayerGold()
+    {
+        return gold;
+    }
+
     void Awake()
     {
     }
@@ -66,6 +71,12 @@ public class PlayerStats : ScriptableObject
     {
         currentArmor += amount;
         Debug.Log("+" + amount + "Armor");
+        OnStatsChanged?.Invoke();
+    }
+
+    public void AddGold(float amount)
+    {
+        gold += amount;
         OnStatsChanged?.Invoke();
     }
 
