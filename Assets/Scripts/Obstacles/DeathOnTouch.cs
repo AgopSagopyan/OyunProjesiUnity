@@ -1,12 +1,7 @@
 using UnityEngine;
-using UnityEngine.Playables;
 
-public class LavaObstacle : MonoBehaviour
+public class DeathOnTouch : MonoBehaviour
 {
-    public PlayerStats playerStats;
-
-    public float damageValue = 10f;
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +18,7 @@ public class LavaObstacle : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            playerStats.AddHealth(-damageValue);
-        }
+            LoadingManager.Load("DeathScene");
+        }     
     }
 }

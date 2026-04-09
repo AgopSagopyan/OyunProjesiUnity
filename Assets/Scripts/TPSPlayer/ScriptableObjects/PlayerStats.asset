@@ -15,7 +15,7 @@ MonoBehaviour:
   maxHealth: 100
   basePower: 10
   baseArmor: 10
-  gold: 50000
+  gold: 100
   currentHealth: 100
-  currentPower: 20
+  currentPower: 10
   currentArmor: 10

@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayerAttackTest.unity
     guid: 064b7953b705f1595b8e3d71a68feede
   - enabled: 1
+    path: Assets/Scenes/ShopScene.unity
+    guid: 75701e8d584a302ac9d4ef107f6b980b
+  - enabled: 1
     path: Assets/Scenes/StatSystemTestScene.unity
     guid: c76c39d4d63a5884eb48aaccc0285ae1
   - enabled: 1
