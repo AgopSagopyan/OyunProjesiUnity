@@ -9,11 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 540b744785c46ae43b91327bb9833c93
   - enabled: 1
+    path: Assets/Scenes/Episodes/Episode2.unity
+    guid: 6201344599231c41b9153b5e9ef8b48f
+  - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 9fc5cc5775e8f9245b359ccb8ab964f0
   - enabled: 1
     path: Assets/Scenes/EnemyTest.unity
     guid: 75ad6af6521eabb399c1043b85368ff9
+  - enabled: 1
+    path: Assets/Scenes/Episodes/Episode3.unity
+    guid: abe16e59b22f574ce94a0558a95ff6d0
   - enabled: 1
     path: Assets/Scenes/PlayerAttackTest.unity
     guid: 064b7953b705f1595b8e3d71a68feede

@@ -7,12 +7,26 @@ public class PlayerStats : ScriptableObject
 
     public System.Action OnStatsChanged;
 
-    [Header("Player Stats")]
+    [Header("Base Player Stats")]
     public float maxHealth = 100f;
-    public float currentHealth = 100f;
+    public float basePower = 10f;
+    public float baseArmor = 10f;
 
-    public float power = 5f;
-    public float armor = 20f;
+
+    [Header("Current Player Stats")]
+    public float currentHealth = 100f;
+    public float currentPower = 5f;
+    public float currentArmor = 20f;
+
+    public void ResetAllStats()
+    {
+        currentHealth = maxHealth;
+        currentPower = basePower;
+        currentArmor = baseArmor;
+
+        OnStatsChanged?.Invoke();
+
+    }
 
     public float GetPlayerHealth()
     {
@@ -21,17 +35,16 @@ public class PlayerStats : ScriptableObject
 
     public float GetPlayerPower()
     {
-        return power;
+        return currentPower;
     }
 
     public float GetPlayerArmor()
     {
-        return armor;
+        return currentArmor;
     }
 
     void Awake()
     {
-        currentHealth = maxHealth;
     }
 
     public void AddHealth(float amount)
@@ -43,14 +56,14 @@ public class PlayerStats : ScriptableObject
 
     public void AddPower(float amount)
     {
-        power += amount;
+        currentPower += amount;
         Debug.Log("+" + amount + " Power");
         OnStatsChanged?.Invoke();
     }
 
     public void AddArmor(float amount)
     {
-        armor += amount;
+        currentArmor += amount;
         Debug.Log("+" + amount + "Armor");
         OnStatsChanged?.Invoke();
     }

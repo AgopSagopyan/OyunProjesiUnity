@@ -20,4 +20,11 @@ public class PlayerStatListener : MonoBehaviour
         powerText.text = "Power: " + playerStats.GetPlayerPower().ToString();
         armorText.text = "Armor: " + playerStats.GetPlayerArmor().ToString();
     }
+
+    void Awake()
+    {
+
+        playerStats.ResetAllStats();
+        UpdateUI();
+    }
 }

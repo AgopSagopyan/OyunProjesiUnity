@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MapSwitcher : MonoBehaviour
 {
+    public string SceneToLoad;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,7 +22,7 @@ public class MapSwitcher : MonoBehaviour
 
         if(other.CompareTag("Player"))
         {
-            LoadingManager.Load("MainMenu");
+            LoadingManager.Load(SceneToLoad);
 
         }
     }
