@@ -11,6 +11,7 @@ public class PlayerStats : ScriptableObject
     public float maxHealth = 100f;
     public float basePower = 10f;
     public float baseArmor = 10f;
+    public float gold=200f;
 
 
     [Header("Current Player Stats")]

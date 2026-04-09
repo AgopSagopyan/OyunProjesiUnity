@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   maxHealth: 100
+  basePower: 10
+  baseArmor: 10
+  gold: 50000
   currentHealth: 100
-  power: 5
-  armor: 20
+  currentPower: 20
+  currentArmor: 10
