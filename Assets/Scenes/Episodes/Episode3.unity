@@ -871,6 +871,7 @@ GameObject:
   - component: {fileID: 320457495}
   - component: {fileID: 320457494}
   - component: {fileID: 320457493}
+  - component: {fileID: 320457497}
   m_Layer: 0
   m_Name: ThirdPersonPlayer
   m_TagString: Player
@@ -958,6 +959,29 @@ Transform:
   - {fileID: 1321595332}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &320457497
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320457492}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: -1.2, z: 0}
 --- !u!1 &338919299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,6 +2460,7 @@ GameObject:
   - component: {fileID: 940759760}
   - component: {fileID: 940759759}
   - component: {fileID: 940759762}
+  - component: {fileID: 940759763}
   m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
@@ -2550,6 +2575,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LavaScript
   sceneName: DeathScene
+--- !u!65 &940759763
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940759757}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &946217191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2786879827713971598, guid: 2683597c7e3ae2943b66dfba70023eff, type: 3}
@@ -3809,6 +3855,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6250554344000320130, guid: ad4ea0f93db741943bafc438f7df75e3, type: 3}
   m_PrefabInstance: {fileID: 1539294034}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1354116794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1354116797}
+  - component: {fileID: 1354116796}
+  - component: {fileID: 1354116795}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1354116795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354116794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e461a16492193686e8fc1af817c01b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapSwitcher
+  SceneToLoad: MainMenu
+--- !u!65 &1354116796
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354116794}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1354116797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354116794}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.67, y: 4.81, z: -20.119}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1374575617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1211373015379312933, guid: e146a87b1eed38544959959fdf36aea3, type: 3}
@@ -6126,6 +6239,8 @@ GameObject:
   - component: {fileID: 2101656726}
   - component: {fileID: 2101656731}
   - component: {fileID: 2101656730}
+  - component: {fileID: 2101656732}
+  - component: {fileID: 2101656733}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -6148,7 +6263,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -6263,6 +6378,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NavMeshChaserEnemyMovement
   targetPlayer: {fileID: 320457496}
+--- !u!114 &2101656732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101656725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f04059a6c9e59b31aa13587cf850fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyRangedAttack
+  projectilePrefab: {fileID: 8232715885687478295, guid: 49ac1557ff5ba48e6adda5241af08ef7, type: 3}
+  damage: 10
+  attackSpeed: 2
+  lifeTime: 5
+--- !u!114 &2101656733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101656725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f027ef00c95ee03498c36ebadf502c56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LavaScript
+  sceneName: DeathScene
 --- !u!4 &2103438260 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 216129491594329198, guid: 14f983802e7a8dd40b5580f58710adfb, type: 3}
@@ -6358,3 +6502,4 @@ SceneRoots:
   - {fileID: 2101656729}
   - {fileID: 320457496}
   - {fileID: 338919300}
+  - {fileID: 1354116797}

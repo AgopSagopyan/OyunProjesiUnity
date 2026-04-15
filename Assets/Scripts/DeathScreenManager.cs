@@ -17,7 +17,7 @@ public class DeathScreenManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("EpisodeTest"); 
+        SceneManager.LoadScene("TestStage"); 
     }
 
     // ANA MENÜ
