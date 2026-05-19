@@ -1,4 +1,3 @@
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
@@ -28,6 +27,12 @@ public class ThirdPersonMovement : MonoBehaviour
     private float verticalVelocity;
 
     private CharacterController controller;
+
+    [Header("Animations")]
+    private Animator _animator;
+
+    public Joystick joystick;
+
 
 
     void Awake() {
@@ -88,7 +93,10 @@ public class ThirdPersonMovement : MonoBehaviour
     void Update() {
         Move();
         ApplyGravity();
+
     }
+
+
 
     void Move() {
 
@@ -96,6 +104,11 @@ public class ThirdPersonMovement : MonoBehaviour
 
 
         Vector3 direction = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
+
+        //Vector3 direction = new Vector3(joystick.Horizontal, 0f, joystick.Vertical).normalized;
+
+
+
 
         if (direction.magnitude >= 0.1f)
         {

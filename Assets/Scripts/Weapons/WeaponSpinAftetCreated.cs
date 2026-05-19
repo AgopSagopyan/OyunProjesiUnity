@@ -16,7 +16,7 @@ public class WeaponSpinAftetCreated : MonoBehaviour
 
     System.Collections.IEnumerator RotateWeapon(Transform weaponTarget)
     {
-        float elapsed = 0f;
+        //float elapsed = 0f;
         Quaternion startRotation = weaponTarget.localRotation;
         Quaternion endRotation = Quaternion.Euler(0, 0, 0f);
 
